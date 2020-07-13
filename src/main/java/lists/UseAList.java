@@ -16,6 +16,13 @@ public class UseAList {
     List<String> names = new ArrayList<>(
         Arrays.asList(/*LocalDate.now(), */"Alice", "Bob"));
 //    names = Collections.checkedList(names, String.class);
+
+    // Can't do this, because <String> is gone at runtime.
+    // "Type Erasure" -- compiler knows about <String> and
+    // Checks for consistent uses. Runtime, knows nothing.
+//    if (names instanceof List<String>) {
+//      System.out.println("it's a list...");
+//    }
     names.add("Fred");
     names.add("Jim");
     names.add("Sheila");
